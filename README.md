@@ -1,3 +1,3 @@
 # tic-tac-toe1
 --><h1>link to open d game--></h1>
-<a>tictactoe-sleepingbeauty106.netlify.app</a>
+<a>https://heuristic-bell-3fd457.netlify.app/</a>
