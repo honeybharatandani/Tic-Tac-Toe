@@ -1,119 +1,121 @@
 <!DOCTYPE html>
 <html>
 
-<body>
-    <!--id attribute so it can be referred to by JavaScript.
+
+<!--id attribute so it can be referred to by JavaScript.
      3*3 grid of Boxes -->
-    <title>Tic tac toe 😮</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript">
-        let n = 1;
-        let sp1 = 0;
-        let sp2 = 0;
-        var current = "X";
-        // when player looses plays d audio
+<title>Tic tac toe 😮</title>
+<meta charset="utf-8">
 
-        var audio = new Audio('/home/honey/Downloads/game3.mp3');
-        // Function is called whenever player tab on any box
-        function mainFunction(fill) {
-            // check dis function whether x is winner on not
-            //The innerHTML property sets or returns the HTML content (inner HTML) of an element
-            player();
-            if (n <= 9) {
-                if (fill.innerHTML == "") {
-                    fill.innerHTML = (current == "X") ? "X" : "O";
-                    n++;
-                    changeplayer();
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript">
+    let n = 1;
+    let sp1 = 0;
+    let sp2 = 0;
+    var current = "X";
+    // when player looses plays d audio
 
-                    if (checkWinner()) {
-                        if (fill.innerHTML == "X") {
-                            document.getElementById('win').innerHTML = "X is Winner😉";
-                            audio.play();
-                            score1();
+    var audio = new Audio('/home/honey/Downloads/game3.mp3');
+    // Function is called whenever player tab on any box
+    function mainFunction(fill) {
+        // check dis function whether x is winner on not
+        //The innerHTML property sets or returns the HTML content (inner HTML) of an element
+        player();
+        if (n <= 9) {
+            if (fill.innerHTML == "") {
+                fill.innerHTML = (current == "X") ? "X" : "O";
+                n++;
+                changeplayer();
 
-                        } else {
-                            document.getElementById('win').innerHTML = "O is Winner😉";
-                            audio.play();
-                            score2();
+                if (checkWinner()) {
+                    if (fill.innerHTML == "X") {
+                        document.getElementById('win').innerHTML = "X is Winner😉";
+                        audio.play();
+                        score1();
 
-                        }
+                    } else {
+                        document.getElementById('win').innerHTML = "O is Winner😉";
+                        audio.play();
+                        score2();
+
                     }
                 }
             }
-            if (n >= 10) {
-                document.getElementById('win').innerHTML = "try again 😥";
-                audio.play();
-            }
         }
-        /* Player turn space */
-        function player() {
-
-            if (n % 2 == 0) {
-                document.getElementById("player").innerHTML = "Player: X Turn !";
-            } else {
-                document.getElementById("player").innerHTML = "Player: O Turn !";
-            }
+        if (n >= 10) {
+            document.getElementById('win').innerHTML = "try again 😥";
+            audio.play();
         }
+    }
+    /* Player turn space */
+    function player() {
 
-        function getdata(pra) {
-            return document.getElementById(pra).innerHTML;
+        if (n % 2 == 0) {
+            document.getElementById("player").innerHTML = "Player: X Turn !";
+        } else {
+            document.getElementById("player").innerHTML = "Player: O Turn !";
         }
+    }
 
-        function checkCondition(d1, d2, d3) {
-            if (getdata(d1) != "" && getdata(d2) != "" && getdata(d3) != "" && getdata(d1) == getdata(d2) && getdata(d2) == getdata(d3)) {
-                return true;
-            }
+    function getdata(pra) {
+        return document.getElementById(pra).innerHTML;
+    }
+
+    function checkCondition(d1, d2, d3) {
+        if (getdata(d1) != "" && getdata(d2) != "" && getdata(d3) != "" && getdata(d1) == getdata(d2) && getdata(d2) == getdata(d3)) {
+            return true;
         }
+    }
 
-        function checkWinner() {
-            if (checkCondition('d1', 'd2', 'd3') || checkCondition('d4', 'd5', 'd6') || checkCondition('d7', 'd8', 'd9') || checkCondition('d1', 'd4', 'd7') ||
-                checkCondition('d2', 'd5', 'd8') || checkCondition('d3', 'd6', 'd9') || checkCondition('d1', 'd5', 'd9') ||
-                checkCondition('d3', 'd5', 'd7')) {
-                return true;
-            }
+    function checkWinner() {
+        if (checkCondition('d1', 'd2', 'd3') || checkCondition('d4', 'd5', 'd6') || checkCondition('d7', 'd8', 'd9') || checkCondition('d1', 'd4', 'd7') ||
+            checkCondition('d2', 'd5', 'd8') || checkCondition('d3', 'd6', 'd9') || checkCondition('d1', 'd5', 'd9') ||
+            checkCondition('d3', 'd5', 'd7')) {
+            return true;
         }
+    }
 
-        /* Reset Button */
-        function reset() {
-            for (let i = 1; i <= 9; i++) {
-                document.getElementById("d" + i).innerHTML = "";
-                document.getElementById('win').innerHTML = "";
-                current = "X";
-                document.getElementById('player').innerHTML = "player X turn ";
+    /* Reset Button */
+    function reset() {
+        for (let i = 1; i <= 9; i++) {
+            document.getElementById("d" + i).innerHTML = "";
+            document.getElementById('win').innerHTML = "";
+            current = "X";
+            document.getElementById('player').innerHTML = "player X turn ";
 
-            }
-            n = 1;
         }
+        n = 1;
+    }
 
-        function demo() {
-            let no, ho;
+    function demo() {
+        let no, ho;
 
-            no = document.getElementById("demo1").value;
-            console.log(no);
-            localStorage.setItem("name1", no);
-            ho = document.getElementById("demo2").value;
-            console.log(ho);
-            localStorage.setItem("name2", ho);
-        }
+        no = document.getElementById("demo1").value;
+        console.log(no);
+        localStorage.setItem("name1", no);
+        ho = document.getElementById("demo2").value;
+        console.log(ho);
+        localStorage.setItem("name2", ho);
+    }
 
-        function changeplayer() {
-            current = (current == "X") ? "O" : "X";
-        }
+    function changeplayer() {
+        current = (current == "X") ? "O" : "X";
+    }
 
-        function score1() {
-            document.getElementById('box1').innerHTML = sp1 + 1;
-            sp1 += 1;
-        }
+    function score1() {
+        document.getElementById('box1').innerHTML = sp1 + 1;
+        sp1 += 1;
+    }
 
-        function score2() {
-            document.getElementById('box2').innerHTML = sp2 + 1;
-            sp1 += 1;
-        }
-    </script>
-</body>
+    function score2() {
+        document.getElementById('box2').innerHTML = sp2 + 1;
+        sp1 += 1;
+    }
+</script>
+
 
 <head>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"> -->
     <style type="text/css">
         .image {
             background-image: url('https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmFsYW5jZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
@@ -355,21 +357,23 @@
             text-align: center;
             display: flex;
             width: 70px;
-            margin-top: -130px;
+            margin-top: -140px;
             height: 40px;
             color: gainsboro;
             font-family: 'Raleway';
             font-size: 2rem;
             background: blue;
-            margin-left: 1500px;
+            margin-left: 1600px;
+            position: fixed;
         }
         
         #box2 {
-            margin-top: -0px;
+            position: fixed;
+            margin-top: -80px;
             text-align: center;
             display: flex;
             width: 70px;
-            margin-left: 1590px;
+            margin-left: 1600px;
             height: 40px;
             color: gainsboro;
             font-family: 'Raleway';
@@ -416,12 +420,16 @@
 
                 <h2 id="player" class="player()"></h2>
                 <div id="card" class="card">
+
+
                     <button id="win">Winner 🎉:</button>
 
 
                 </div>
             </div>
         </div>
+        <!-- <a class="cc-whatsapp btn btn-link" target="_" href="https://api.whatsapp.com/send/?phone=%2B917385506363&text=Hey+Honey&app_absent=0"><i class="fa fa-whatsapp fa-2x " aria-hidden="true"></i></a> -->
+
 </body>
 
 </html>
