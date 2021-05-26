@@ -66,7 +66,7 @@
             return true;
         }
     }
-
+// x is winner or o condition
     function checkWinner() {
         if (checkCondition('d1', 'd2', 'd3') || checkCondition('d4', 'd5', 'd6') || checkCondition('d7', 'd8', 'd9') || checkCondition('d1', 'd4', 'd7') ||
             checkCondition('d2', 'd5', 'd8') || checkCondition('d3', 'd6', 'd9') || checkCondition('d1', 'd5', 'd9') ||
@@ -144,7 +144,7 @@
                 background-color: rgb(0, 255, 191);
             }
         }
-        
+/*         css of the game */
         #d1,
         #d2,
         #d3,
@@ -201,7 +201,7 @@
             background-color: orchid;
             cursor: pointer;
         }
-        
+/*        win button  */
         #win {
             font-family: "FontAwesome";
             border-radius: 50%;
