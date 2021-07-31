@@ -1,0 +1,269 @@
+.image {
+    background-image: url('https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmFsYW5jZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 500px;
+    height: 1300px;
+    margin-top: auto;
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    #main,
+    #reset,
+    #box1,
+    #box2,
+    #player,
+    #card,
+    #win {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    #main {
+        width: 80%;
+        padding: 0;
+    }
+    .container {
+        width: 100%;
+    }
+}
+
+#d1,
+#d2,
+#d3,
+#d4,
+#d5,
+#d6,
+#d7,
+#d8,
+#d9 {
+    background-color: rgba(10, 11, 11, 0.856);
+    background-clip: content-box;
+    color: red;
+    font: bold 30px Arial, sans-serif;
+    border: 2px blanchedalmond;
+    border-style: dotted;
+    border-radius: 30px;
+    text-align: center;
+    text-overflow: ellipsis;
+    height: 170px;
+    width: 180px;
+    float: left;
+    border-top: none;
+    border-right: none;
+    font-size: 100px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#d7,
+#d8,
+#d9 {
+    border-bottom: none;
+}
+
+#d1,
+#d4,
+#d7 {
+    clear: left;
+    border-left: none;
+}
+
+#player {
+    position: sticky;
+    font-family: initial;
+    margin-left: 1220px;
+    margin-top: 130px;
+    margin-bottom: 300px;
+    font-family: auto;
+    font-size: 35px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+#win {
+    position: sticky;
+    font-family: "FontAwesome";
+    border-radius: 50%;
+    margin-bottom: 250px;
+    text-overflow: ellipsis;
+    margin-block-start: 150px;
+    font-size: 190%;
+    font-weight: 200%;
+    width: 250px;
+    height: 250px;
+    color: rgb(235, 217, 222);
+    text-transform: capitalize;
+    cursor: pointer;
+    animation-name: sample;
+    line-height: 300px;
+    margin: 140px;
+    border-style: dotted;
+    border-right-color: red;
+    background-color: rgb(12, 12, 11);
+    border-top-color: orangered;
+    border-bottom-color: orangered;
+    border-color: orangered;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#box1:hover {
+    background-color: firebrick;
+    cursor: pointer;
+}
+
+#box2:hover {
+    background-color: firebrick;
+    cursor: pointer;
+}
+
+h1 {
+    margin-top: auto;
+    font-family: sans-serif;
+    font-size: 750%;
+    font-style: italic;
+    background-position: bottom;
+    color: rgb(10, 23, 136);
+    animation-name: text;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes text {
+    0% {
+        color: bisque;
+    }
+    50% {
+        color: crimson;
+    }
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    bottom: 50%;
+    line-height: 300px;
+    margin: 140px;
+    color: orange;
+    box-shadow: 0 0 400px red;
+    border-style: double;
+    border-top-color: orangered;
+    border-bottom-color: orangered;
+    border-color: orangered;
+    animation-name: sample;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+@keyframes sample {
+    from {
+        border-radius: 0%;
+    }
+    to {
+        border-radius: 50%;
+    }
+}
+
+#d1:hover {
+    background-color: coral;
+    cursor: pointer;
+}
+
+#d2:hover {
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+#d3:hover {
+    background-color: mediumslateblue;
+    cursor: pointer;
+}
+
+#d4:hover {
+    background-color: lightseagreen;
+    cursor: pointer;
+}
+
+#d5:hover {
+    background-color: brown;
+    cursor: pointer;
+}
+
+#d6:hover {
+    background-color: orchid;
+    cursor: pointer;
+}
+
+#d7:hover {
+    background-color: crimson;
+    cursor: pointer;
+}
+
+#d8:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+
+#d9:hover {
+    background-color: peru;
+    cursor: pointer;
+}
+
+#reset {
+    color: blueviolet;
+    background-color: salmon;
+    margin-left: 110px;
+    margin-top: 10px;
+    height: 60px;
+    font-size: 20px;
+    width: 130px;
+}
+
+#reset:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+#box1 {
+    text-align: center;
+    display: flex;
+    width: 70px;
+    margin-top: -130px;
+    height: 40px;
+    color: gainsboro;
+    font-family: 'Raleway';
+    font-size: 2rem;
+    background: blue;
+    margin-left: 1500px;
+}
+
+#box2 {
+    margin-top: -0px;
+    text-align: center;
+    display: flex;
+    width: 70px;
+    margin-left: 1590px;
+    height: 40px;
+    color: gainsboro;
+    font-family: 'Raleway';
+    font-size: 2rem;
+    background: blue
+}
+
+h4 {
+    display: flex;
+    font-family: cursive;
+    align-items: center;
+    font-size: 35px;
+    color: black;
+    margin-left: 1200px;
+}
