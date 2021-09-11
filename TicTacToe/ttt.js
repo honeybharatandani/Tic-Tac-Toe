@@ -4,93 +4,93 @@ let sp2 = 0;
 var current = "😍";
 // when player looses plays d audio
 
-var audio = new Audio('game3.mp3');
+var audio = new Audio("game3.mp3");
 // Function is called whenever player tab on any box
 function mainFunction(fill) {
-    // check dis function whether x is winner on not
-    //The innerHTML property sets or returns the HTML content (inner HTML) of an element
-    player();
-    if (n <= 9) {
-        if (fill.innerHTML == "") {
-            fill.innerHTML = (current == "😍") ? "😍" : "😉";
-            n++;
-            changeplayer();
+  // check dis function whether x is winner on not
+  //The innerHTML property sets or returns the HTML content (inner HTML) of an element
+  player();
+  if (n <= 9) {
+    if (fill.innerHTML == "") {
+      fill.innerHTML = current == "😍" ? "😍" : "😉";
+      n++;
+      changeplayer();
 
-            if (checkWinner()) {
-                if (fill.innerHTML == "😍") {
-                    document.getElementById('win').innerHTML = "X is Winner 🥳";
+      if (checkWinner()) {
+        if (fill.innerHTML == "😍") {
+          document.getElementById("win").innerHTML = "X is Winner 🥳";
 
-                    // score1();
-                    audio.play();
-                    empty("");
+          // score1();
+          audio.play();
+          n = 10;
+          return fill;
+        } else {
+          document.getElementById("win").innerHTML = "O is Winner 🥳";
 
-
-                } else {
-                    document.getElementById('win').innerHTML = "O is Winner 🥳";
-
-                    // score2();
-                    audio.play();
-                    empty("");
-                }
-            }
+          // score2();
+          audio.play();
+          n = 10;
+          return fill;
         }
+      }
     }
+  }
 
-    if (n > 10) {
-        document.getElementById('win').innerHTML = "try again😥";
-        audio.play();
-    }
+  if (n === 10) {
+    document.getElementById("win").innerHTML = "try again😥";
+    audio.play();
+  }
 }
 /* Player turn space */
 function player() {
-
-    if (n % 2 == 0) {
-        document.getElementById("player").innerHTML = "Player: X's Turn 😍!";
-    } else {
-        document.getElementById("player").innerHTML = "Player: O's Turn 😉!";
-    }
+  if (n % 2 == 0) {
+    document.getElementById("player").innerHTML = "Player: X's Turn 😍!";
+  } else {
+    document.getElementById("player").innerHTML = "Player: O's Turn 😉!";
+  }
 }
-
-
-function empty() {
-    if (n !== 0) {
-        document.getElementById("player").innerHTML = "";
-    }
-    else {
-        document.getElementById("player").innerHTML = "";
-
-    }
-}
-
 
 function getdata(pra) {
-    return document.getElementById(pra).innerHTML;
+  return document.getElementById(pra).innerHTML;
 }
 
 function checkCondition(d1, d2, d3) {
-    if (getdata(d1) != "" && getdata(d2) != "" && getdata(d3) != "" && getdata(d1) == getdata(d2) && getdata(d2) == getdata(d3)) {
-        return true;
-    }
+  if (
+    getdata(d1) != "" &&
+    getdata(d2) != "" &&
+    getdata(d3) != "" &&
+    getdata(d1) == getdata(d2) &&
+    getdata(d2) == getdata(d3)
+  ) {
+    return true;
+  }
 }
 
 function checkWinner() {
-    if (checkCondition('d1', 'd2', 'd3') || checkCondition('d4', 'd5', 'd6') || checkCondition('d7', 'd8', 'd9') || checkCondition('d1', 'd4', 'd7') ||
-        checkCondition('d2', 'd5', 'd8') || checkCondition('d3', 'd6', 'd9') || checkCondition('d1', 'd5', 'd9') ||
-        checkCondition('d3', 'd5', 'd7')) {
-        return true;
-    }
-
+  if (
+    checkCondition("d1", "d2", "d3") ||
+    checkCondition("d4", "d5", "d6") ||
+    checkCondition("d7", "d8", "d9") ||
+    checkCondition("d1", "d4", "d7") ||
+    checkCondition("d2", "d5", "d8") ||
+    checkCondition("d3", "d6", "d9") ||
+    checkCondition("d1", "d5", "d9") ||
+    checkCondition("d3", "d5", "d7")
+  ) {
+    return true;
+  }
 }
 
 /* Reset Button */
 function reset() {
-    for (let i = 1; i <= 9; i++) {
-        document.getElementById("d" + i).innerHTML = "";
-        document.getElementById('win').innerHTML = "";
-        current = "😍";
-        document.getElementById('player').innerHTML = "player X's turn 😍";
-    }
-        
+  for (let i = 1; i <= 9; i++) {
+    document.getElementById("d" + i).innerHTML = "";
+    document.getElementById("win").innerHTML = "";
+    current = "😍";
+    document.getElementById("player").innerHTML = "player X's turn 😍";
+    current = "x";
+  }
+  n = 1;
 }
 
 // function demo() {
@@ -105,7 +105,7 @@ function reset() {
 // }
 
 function changeplayer() {
-    current = (current == "😍") ? "😉" : "😍";
+  current = current == "😍" ? "😉" : "😍";
 }
 
 // function score1() {

@@ -7,7 +7,7 @@
 }
 
 #win {
-  color: #000;
+  color: rgb(204, 41, 41);
   text-overflow: ellipsis;
   margin-block-start: 190px;
 }
