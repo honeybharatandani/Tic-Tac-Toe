@@ -6,12 +6,6 @@
   width: 1800px;
 }
 
-#win {
-  color: rgb(204, 41, 41);
-  text-overflow: ellipsis;
-  margin-block-start: 190px;
-}
-
 #d1,
 #d2,
 #d3,
@@ -53,6 +47,15 @@
   border-left: none;
 }
 
+#win {
+  color: rgb(204, 41, 41);
+  background-color: aliceblue;
+  border: 2px double black;
+  font-weight: 500;
+  margin-left: 60px;
+  font-style: italic;
+  font-size: 1.2rem;
+}
 /* #player {
   font-family: initial;
   margin-left: 1220px;
@@ -233,3 +236,44 @@ h1 {
   color: black;
   margin-left: 1200px;
 } */
+
+@media (max-width: 1700px) {
+  .image {
+    background: repeating-linear-gradient(
+      45deg,
+      rgb(231, 95, 77) 40px,
+      rgb(233, 139, 52) 40px,
+      rgb(231, 84, 71) 80px
+    );
+  }
+  #d1,
+  #d2,
+  #d3,
+  #d4,
+  #d5,
+  #d6,
+  #d7,
+  #d8,
+  #d9 {
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border-top: none;
+    border-right: none;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  #win {
+    background-color: aliceblue;
+    border: 2px double black;
+    font-weight: 500;
+    font-size: 30px;
+  }
+  #reset {
+    margin-top: 380px;
+    margin-inline-start: -200px;
+    height: 50px;
+    width: 120px;
+  }
+}

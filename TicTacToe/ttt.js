@@ -44,9 +44,9 @@ function mainFunction(fill) {
 /* Player turn space */
 function player() {
   if (n % 2 == 0) {
-    document.getElementById("player").innerHTML = "Player: X's Turn 😍!";
+    document.getElementById("player").innerHTML = "Player: X's Turn !";
   } else {
-    document.getElementById("player").innerHTML = "Player: O's Turn 😉!";
+    document.getElementById("player").innerHTML = "Player: O's Turn !";
   }
 }
 
@@ -87,7 +87,7 @@ function reset() {
     document.getElementById("d" + i).innerHTML = "";
     document.getElementById("win").innerHTML = "";
     current = "😍";
-    document.getElementById("player").innerHTML = "player X's turn 😍";
+    document.getElementById("player").innerHTML = "player X's turn!!";
     current = "x";
   }
   n = 1;
@@ -107,7 +107,6 @@ function reset() {
 function changeplayer() {
   current = current == "😍" ? "😉" : "😍";
 }
-
 // function score1() {
 //     document.getElementById('box1').innerHTML = sp1 + 1;
 //     sp1 += 1;
